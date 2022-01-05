@@ -1,0 +1,2444 @@
+nenosystem.in8085/git/ 
+
+=========================== 
+
+SERVER RELATED QUESTION:- 
+
+=========================== 
+
+Q.	What is tomcat directory sturucture.? 
+
+/AppRoot 
+
+1. /WEB-INF 
+
+1.1 /classes 
+
+1.2 /tags 
+
+1.3 /lib 
+
+1.4 web.xml 
+
+ 
+2.JSP Page 
+
+HTML ,CSS,JS file ,Images,Media files 
+
+Q.	What is jboss directory sturucture.? 
+
+/AppRoot 
+
+1. /WEB-INF 
+
+1.1 /classes 
+
+1.2 /tags 
+
+1.3 /lib 
+
+1.4 web.xml 
+
+ 
+
+2.JSP Page 
+
+HTML ,CSS,JS file ,Images,Media files 
+
+Q.	How to start server on tomcat server? 
+
+Tomcat +bin+startup.batch 
+
+Tomcat +bin+shutdown.batch 
+
+Q.	How to start server on JBoss server? 
+
+JBoss +bin+standlone.batch 
+
+Ctrl+C and press Y  
+ 
+
+Q.	Tomcat  
+
+Tomcat + conf +server.xml 
+
+<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" /> 
+
+ 
+Q.	JBoss 
+
+JBoss + standalone + configuration + stantlone.xml  
+
+ 	<socket-binding name="http" port="${jboss.http.port:8080}"/>  
+
+Q.  {{  Difference between jboss and tomcat,? 
+
+ 	1.JBoss is a Application server whereas Tomcat is a WebServer. 
+
+2.JBoss follows distributes transations like as EJB (Enterprise Java Beans) where as tomcat follows jsp and servlet. 
+
+3.JBoss is heavily weight as compare to tomcat. 
+
+4.JBoss works as slow as compare to tomcat.  }} 
+
+ 
+
+Q.  {{  Difference between web server and application server.? 
+
+Web server      contains only web or servlet container.  
+
+It can be used for servlet, jsp, struts, jsf etc. It can't be used for EJB. 
+
+ 
+
+Application    server contains Web and EJB containers. 
+
+It can be used for servlet, jsp, struts, jsf, ejb etc. It is a component based product.  }} 
+
+
+Q.  {{  list out the name of web server and application server? 
+
+ 	WebServer List 
+
+1.Apache Tomcat 
+
+2.Resin 
+
+3.Klone 
+
+4.Oracle Web Tier 
+
+ 
+
+Application Server List 
+
+1.JBoss 
+
+2.WebLogics 
+
+3.GlassFish 
+
+4.Websphere 
+
+5. Jttey	}} 
+
+ 
+
+Q.    write the folder structure of Tomcat and JBoss ? 
+
+Tomcat  
+
+bin\config\liberary\log\webapps\temp\work 
+
+JBoss 
+
+.installions\appclient\bin\docs\domain\modules\standlone(configruation)(deployment)\welcome-content 
+
+
+
+============================ 
+
+JDBC RELATED QUESTIONS:- 
+
+============================ 
+
+{{   Q. 
+
+DML(Data Manipulation Language):- it is used to perform CRUD operation. 
+
+DDL(Data Definition Language)  :- it is used to perform create table, alter table, drop table. 
+
+DCL(Data control Language)     :- it is used to rollback and commit.       }} 
+
+ 
+
+Q.	Did we use RDBMS? 
+
+YES, It is a relational (rows , column) data base management system, IT IS A TECHNOLOGY. 
+
+ 
+
+Q.	JDBC fullform:-  
+
+JAVA DATABASE CONNECTIVITY. 
+
+ 
+
+Q.	What are jdbc drivers? 
+
+ 
+
+It is a set of Java classes. 
+
+Type 1 :- 
+
+Type 2 :- 
+
+Type 3 :- 
+
+Type 4 :- PURE JAVA DRIVER 
+
+ 
+
+Q.	Which driver u used in your proj4? 
+
+pure java driver.... Driver type 4 
+
+Ex. Class.forName(com.mysql.jdbc.Driver) 
+
+ 
+
+Q.	Steps of Db connectivity? 
+
+There are following steps:- 
+
+ 
+
+     1	Load MySql Database Driver.	 
+
+Class.forName("com.mysql.jdbc.Driver") 
+
+ 
+
+     2	Establish Connection using database url and credentials.	 
+
+Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB","loginID","pwd") 
+
+.....DriverManager is a Factory class...... 
+
+.....DriverManager also uses Factory Design pattern which returns connection Interface obj.....	 
+
+ 
+     3	Execute Query.	 
+
+PreparedStatement ps = conn.prepareStatement("QUERY") 
+
+ 
+
+     4	Execute Query and process result.	 
+
+ResultSet rs = ps.ExecuteQuery   /// int i = ps.ExecuteUpdate 
+
+ 
+
+     5	Iterate row by row and get column of each row using next() of resultset. 
+
+ 
+
+Q.	Command Design Pattern : 
+
+ 	 
+
+follow on controller. 
+
+ 
+
+{{   Q.    What is Business Primarey key? also state its use in project4 
+
+   It contains Business information and it is related with database records.    }} 
+
+ 
+
+{{   Q.	   What is Non Business Primary Key ? also state its use in project4 
+
+   It does not contain business information and it is not related with database.   }} 
+
+ 
+
+{{   Q.    What is design pattern.? 
+
+Standard problem has a standard solution. 
+
+ 
+
+1.Singleton design pattern :The classes which have only one instance in thier lifetime are singleton classes.And its steps are:- 
+
+ 	Create a dummy singleton class:- 
+
+1.public final class Singleton 
+
+Or 
+
+2.private Singleton(){} 
+
+3.private static Singleton st 
+
+4.public static Singleton getInsta() 
+
+ 
+
+ 
+
+2.Builder Design pattern :- create complex object using simple object using step by step approach.  //emailBuilder 
+
+3.Factory Design Pattern :- The class that has ability to Create object of another class is called Factory class and  
+
+  follows factory design pattern. //JDBCDatasource ki getconnection method 
+
+4.FrontController Design Pattern : (It is a single handler of all request) We have used it by implementing Filter interface. 
+
+5.Bridge Design Pattern  :- Single interface multiple implementaion. Ex.. In Class.forName we can use different2  
+
+  Db(oracal,mysql etc) interfaces.	 }} 
+
+ 
+
+Q.	JDBC follow which Design Pattern? 
+
+Bridge Design Pattern  :- Single interface multiple implementaion. Ex.. In Class.forName we can use different2  
+
+        Db(oracal,mysql etc) interfaces.  
+
+ 
+
+{{  Q.	What is normalization.? 
+
+To reduce the redundancy(repetation).   }} 
+
+
+Q.	What is Primary, Unique, Candidate, Composite Key...? 
+
+Primary Key	:- is a uniquely identify rows in DB ,,, not null and unique. 
+
+Unique Key 	:- is a ------------------------- -------single null value. 
+
+Candidate Key	:- alt key which can be pk. 
+
+Composite Key	:- combination of more than 1 key which can uniquely identify the record. 
+
+ 
+
+Q.	What is an index ? How many index you can create on a single table? 
+
+We did not used in our project	 
+
+ 
+
+Q.	What is a triggers/ Amnd their Triggering events? 
+
+We did not used in our project	 
+
+ 
+
+Q.	What is view? Why do you use View? 
+
+We did not used in our project	 
+
+ 
+
+Q.	How we create foreign key in your database? 
+
+ 
+
+CONSTRAINT `FK_st_timetable2` FOREIGN KEY (`SUBJECT_ID`) REFERENCES `st_subject` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE  
+
+ 
+
+{{  Q.	What is acid properties. 
+
+Atomicity means all or nothing 
+
+Consistency means it makes sure that data is in consistent state. 
+
+Isolation means Transactions are independent 
+
+Durability means Committed data never lost    }} 
+
+ 
+
+{{  Q.     how many design patterns you have used in your application explain? 
+
+1.FrontController Design Pattern(FrontController) 
+
+2.Singleton Design Pattern(JDBCDataSource) 
+
+3.Builder Design pattern(EmailBuilder) 
+
+4.Factory Design Pattern(c3p0)               }} 
+
+ 
+
+Q.	What is JDBC?  
+
+SET OF INTERFACES. 
+
+ 
+
+Q.	What are the key interfaces of JDBC?  
+
+OR  
+
+Distinguish between classes and Interfaces of JDBC? 
+
+CLASS:- Driver, DriverManager.....  
+
+        INTERFACE:- connection , Statement (PrepareStatement,CallableStatement),ResultSet.. 
+
+ 
+
+Q.	Differentiate between Statement and Callable Statement? 
+
+ 
+
+Q.	Write the SQL_Queries of All the Methods of UserModel? 
+
+ 
+
+01)	nextPK()	:- "SELECT MAX(ID) FROM ST_USER" 
+
+ 
+
+02)	finfByLogin()	:-   "SELECT * FROM ST_USER WHERE LOGIN=?" 
+
+ 
+
+03)	findByPk()	:- "SELECT * FROM ST_USER WHERE ID=?" 
+
+ 
+
+04)	add()		:- "INSERT INTO ST_USER VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" 
+
+ 
+
+05)	update()	:- "UPDATE ST_USER SET FIRST_NAME=?,LAST_NAME=?,LOGIN=?,PASSWORD=?,DOB=?,MOBILE_NO=?, 
+
+    ROLE_ID=?,UNSUCCESSFUL_LOGIN=?,GENDER=?,LAST_LOGIN=?,USER_LOCK=?, 
+
+    REGISTERED_IP=?,LAST_LOGIN_IP=?,CREATED_BY=?,MODIFIED_BY=?,CREATED_DATETIME=?,MODIFIED_DATETIME=?  
+
+    WHERE ID=?" 
+
+ 
+06)	delete()	:- "DELETE FROM ST_USER WHERE ID=?" 
+
+
+07)	search()	:- "SELECT * FROM ST_USER WHERE 1=1  
+
+AND ID =" " AND FIRST_NAME like '" + bean.getFirstName() + "%'" " Limit " + pageNo + ", " + pageSize 
+
+ 
+08)	list()		:- "select * from ST_USER" "limit",1,10 
+
+ 
+09)	authenticate() 
+
+10)	changePassword() 
+
+11)	registerUser() 
+
+12)	resetPassword() 
+
+13)	forgetPassword() 
+
+ 
+
+Q.	What is Result set? 
+
+obj of RS (Interface) contain pointer to the db records  which returns from select query. 
+
+ITs methods are:- 
+
+getString(), getInt(), next(), getLong() 
+
+ 
+
+Q. 	what is Iterator and what is its return Type? 
+
+ 
+
+ 
+
+Q.	What does next() of Iterator and RS returns? 
+
+ 
+
+Q. 	how you get further more mention connections in DCP? 
+
+Acquired increment. 
+
+ 
+
+Q.	What are the configuration of DCP in your project? 
+
+ 
+
+#Database connection Parameters 
+
+url=jdbc:mysql://localhost:3306/demo_ors 
+
+driver=com.mysql.jdbc.Driver 
+
+username=root 
+
+password= 
+
+DATABASE=JDBC 
+
+service=javaBean 
+
+acquireIncrement = 10 
+
+initialPoolSize = 10 
+
+maxPoolSize = 100 
+
+minPoolSize = 10 
+
+timeout = 10  
+
+ 
+
+ 
+
+Q.	Do we create more than 1 DCP for 1 project? 
+
+Yes, but it depends on the no. of database we use.. bcz only 1DCP can be created for one database.  
+
+ 
+
+Q.	What is SQL injection? 
+
+Appending sql query on run time is called sql injection..  
+
+Eg. where 1=1.... 3=3...... it return true. 
+
+ 
+
+Q.	 What does Like and % sign mean in sql query? 
+
+ Like checks String And % check string. 
+
+ 
+
+Q.	 What is MetaData? how can u get object of RS metadata? 
+
+ Data about data. Eg. Rs ki getMetaData() k through 
+
+ 
+
+  
+
+Q.	What does getInstance() do?   
+
+RETURN INSTANCE of same single class 
+
+ 
+
+ 
+
+{{ Q.	Builder Design Pattern? && Difference between simple and complex object? 
+
+Simple objects ko complex object m build karna by step by step manner.     }} 
+
+ 
+
+{{ Q. 	What are the design pattern used by JDBC and JDBCDataSource? && Also state its API version? 
+
+JDBC API version : 3.0	(Please note:- IT IS NOT JAVA MAIL API 3.1.0s) 
+
+JDBCDataSource Design pattern : Singleton design pattern & Factory design pattern 
+
+ 
+
+Jdbc uses which Design pattern : Bridge Design pattern.      }} 
+
+ 
+
+ 
+
+{{ Q. 	Why we require DCP? 
+
+Connection Reusability & no. of max & min connection.      }} 
+
+ 
+
+Q.	Where do we get JDBC's implemented classes? 
+
+in normal project jar files, in maven project dependencies. 
+
+ 
+
+Q.	How we can achieve transaction handling? 
+
+By disabling autoCommit. HOW? conn.setAutoCommit(false) 
+
+ 
+
+Q.	What is the use of getInstance()? 
+
+Creates instance of Connection Pool 
+
+ 
+
+Q.	Hum project me c3p0 k alawa konsi library class use kar sakte the? 
+
+ 
+
+Q.	cp30 library ki kon si class use ki h ? 
+
+ComboPoolDataSource.  
+
+ 
+
+Q.	when does the instance of JDBCDatasource create's? 
+
+On first time when getInstance() called.  
+
+ 
+
+Q.	What is the return type of getConnection() ? 
+
+Connection Objects. 
+
+ 
+
+Q.	What is the purpose of set AutoCommit(false)? 
+
+To group multiple sql statements in single trasnsaction. 
+
+ 
+
+ 
+
+============================ 
+
+SERVLET RELATED QUESTIONS:- 
+
+============================ 
+
+ 
+
+{{   Q.	 How many types of session tracking.??????????? But how????????? 
+
+ 
+
+Cookie  
+
+HiddenForm 
+
+URL Rewriting       }} 
+
+ 
+
+{{  Q. 	How many way to destroy session? 
+
+ 	There are three way to destroy session  
+
+ 
+
+1.session.invalidate(); 
+
+2.<session-config> 
+
+<session-timeout>20<session-timeout> 
+
+   </session-config> 
+
+3.session.setMaxInactiveInterval();      }} 
+
+ 
+
+{{  Q.	By How many types  we can create servlet.? 
+
+ 	There are three type to create servlet  
+
+1.Servlet Interface 
+
+2.GenericServlet Class  
+
+3.HttpServlet Class             }} 
+
+ 
+
+Q.	What is servlet lifecycle.? 
+
+ 	init() 
+
+service() 
+
+destroy() 
+
+ 
+
+{{  Q.	Difference between generic servelt and http servlet.? 
+
+ 	GenericServlet  defines a generic and protocol (set of rules) independent servlet. it implements Servlet interface that  
+
+        has lifecycle methods of a servlet. 
+
+HttpServlet defines an HTTP protocol specific servlet. it inherits the GenericServlet class.  
+
+HttpServlet provides service methods such as doGet() and doPost() for handling HTTP specific services.    }} 
+
+ 
+
+Q.	Differentiate between GET and POST? 
+
+ 
+
+<.> In doGet Form submitted is encoded in URL but not in doPost. 
+
+<.> Since data is sent through URL therefore its request size(Parameter size less than 2KB)  
+
+    is restricted But there is no restriction in doPost(). 
+
+<.> doGet is unsecure because its Parameter remains in browser history but doPost is secure. 
+
+<.> doGet Contains only character but in doPost it also contains binary data. 
+
+<.> doGet can be cached and can be bookmarked but in doPost it cannot be cached and bookmarked.  
+
+ 
+
+Q.	doGet & doPost??? submit and view logic 
+
+ 
+
+{{ Q.	When run for service method.? 
+
+every request of user          }} 
+
+ 
+
+Q.	Input & Bussiness validation are set in which scope? && Why not in session scope? 
+
+REQUEST 
+
+ 
+
+Q.	Show methods of servlet which you have Extended?  
+
+HTTPSERVLET 		:- It inherit GenericServlet class, It is a base class of all servlets that handles HTTP requests. 
+
+ITS METHODS ARE		:- doGet(), doPost(), doPut(), doHead(), doDelete()  
+
+   (ALSO DIFFERENTIATE BETWEEN ITS doGet &doPost methods) 
+
+ 
+
+{{  Q.	Difference between forword and send redirect.? 
+
+Method forward() of request dispatcher object is used to forward request from one servlet to another servlet. 
+
+Method sendRedirect of request dispatcher object is used to generate new request always and sent to another servlet.   }} 
+
+ 
+
+{{  Q.  how to enable session? 
+
+HttpSession session = request.getSession(true); 
+
+two method of Session  
+
+session.setAttributes(); 
+
+session.getAttributes();      }} 
+
+ 
+
+{{  Q.  Difference between session(true) and session(false);	 
+
+ 
+
+HttpSession session = request.getSession();  //false 
+
+if any session is existed in application it will get it; otherwise it will create new session.	 
+
+ 
+
+HttpSession session = request.getSession(true); 
+
+it always create new session.                           }} 
+
+ 
+
+{{   Q.  how to set timeout for session in web.xml? 
+
+<session-config> 
+
+<session-timeout>20<session-timeout> 
+
+</session-config>                                 }} 
+
+ 
+
+{{   Q.  what is the default timeout for session? 
+
+web.xml 20 minutes(Server.xml)                  }} 
+
+ 
+
+{{   Q.  Difference between session and cookies? 
+
+ 	session stored on server side and cookies stored in browser.  }} 
+
+ 
+
+{{   Q.  how to identify user on server? 
+
+ 	By using session Tracking.            }} 
+
+ 
+
+Q.	Who called service()? 
+
+Container. 
+
+ 
+
+Q.	Who is calling validate()?  
+
+SERVICE() & IT IS CALLED BY CONTAINER & CONTAINER IS CALLED BY JVM. 
+
+ 
+
+Q.	 How you can check  that user logged in or not?? && And when does user State will show null?? 
+
+ On Header we are checking through session the status of user is null or not. OR we can also check it by session ID. 
+
+ 
+
+Q.	 Why did not we use request scope for logging instead of session? 
+
+ Because if we do so then on every request of user we have to authenticate user login id and password. 
+
+ 
+
+Q.	 Why devlopers are not recommended to override service method give reason? 
+
+ Bcz it change the original defination of service(). 
+
+(Eg.To perform generic operation provided by devloper.Bcz it call goGet() by default.) 
+
+ 
+
+Q.	 How a client can communicate to  server? 
+
+ Using protocols. we used Http. 
+
+ 
+========================= 
+
+JSP RELATED QUESTIONS:- 
+
+========================= 
+
+ 
+
+{{  Q.	What is all tag of jsp? 
+
+1.Scripting tag 
+
+Scripting tag is used to provide the ability to execute java code inside the jsp  
+
+1.1 Scriptlet tag <% %> 
+
+Ans) it is used to write java control statements  inside JSP page. 
+
+1.2 Expression tag <%= %> 
+
+it is used to add result of one line expression in the html response. 
+
+1.3 Declaration tag <%! %> 
+
+Ans) it is used to declare variable or methods on Jsp.. when Jsp is translated into servlet then contents of declaration tag are copied  				     outside _jspService() methods. 
+
+1.4 JSP comments<%--   --%> 
+
+Ans) JSP comment tag is used to add developer's comment for developed jsp code. 
+
+
+2.Directive tag <%@ %> 
+
+it is used to inject additional programming statements in source program. 
+
+ 
+
+2. Directive Elements 
+
+2.1 Page directive : it is used to configure properties of current jsp page. 
+
+2.2 Include directive : it is used to include content of the file on current jsp page. 
+
+2.3 Taglib directive : it is used to create custom jsp tags. 
+
+
+3.Action tag 
+
+3.1 The jsp:include  
+
+3.2 The jsp:forward 
+
+3.3 The jsp:useBean 
+
+3.4 The jsp:setProperty 
+
+3.5 The jsp:getProperty 
+
+3.6 The jsp:plugin action tag             }} 
+
+
+{{ Q. 	What is <jsp:useBean>? 
+
+it is a another way to create a bean class object.   }} 
+
+
+{{ Q.	How many  types use for scope.? 
+
+
+session 
+
+request 
+
+page (default) 
+
+application     }} 
+
+ 
+
+Q.     what are the implicit objects in jsp? 
+
+ 
+
+There are some implicit objects in jsp 
+
+1.request(HttpServletRequest) 
+
+2.response(HttpServletResponse) 
+
+3.session(HttpSession) 
+
+4.application(PageContext) 
+
+5.page(current jsp) 
+
+6.pageContext(PageContext) 
+
+7.out(JspWriter)  
+
+8.exception(Trowable) 
+
+9config(ServletConfig) 
+
+ 
+
+{{  Q.     what is the jsp page life cycle? 
+
+ 	jspInit()(JspPage interface) 
+
+_service() (HttpJspPage class)		_ stands for that it cant be overridden. 
+
+jspDestroy()(JspPage interface) 
+
+   }} 
+
+
+======================== 
+
+OOP RELATED QUESTIONS:- 
+
+======================== 
+
+{{ Q.	How can you achieve data abstration ? 
+
+   	Data Abstraction is process of hiding the implementation details and showing only the functionality. 
+
+2. Data Abstration in java is achieved by using interface and abstract class.  }} 
+
+ 
+
+{{ Q.	How can you achieve full abstration in your application ? 
+
+ 	by using interface.   }} 
+
+ 
+
+{{ Q.	 What is Abstract Class ? 
+
+ Abstract class is used when parent need to provide default behavior along with abstract method. 
+
+         It enforces child classes to impletment specialized behavior of abstract methods. It can never be instantiated.    }} 
+
+ 
+
+{{ Q.	Why override service method? 
+
+ We create custom ctl (BaseCtl) in which we write service method to provide generic operation flow.  
+
+         we are not recommended to override the service method.  }} 
+
+ 
+
+{{ Q.	Difference between static polymorphism and dynamic polymorphism.? 
+
+static is done by overloadding . Eg. search(),list()   and dynamic is done method overriding.getKey(), 
+
+        getValue() of BaseBean.java.  }} 
+
+ 
+
+{{ Q.	 What is base bean .? 
+
+ 	BaseBean is a parent class of all bean and it contains generic attributes.  }} 
+
+ 
+
+{{ Q.	What is basectl. And all methods.? 
+
+ 	BaseCtl is parent ctl of all ctl and it contain generic work flow, generic operation,generic constants. 
+
+Generic Work flow provides by services method. 
+
+Generic Operation provides by basectl method. such as preload,validate,populateBean,getView(). 
+
+Generic Constants provides by all buttons.   }} 
+
+ 
+
+{{ Q.	How many types interface use for project.? 
+
+DropDownListBean.java 
+
+ORSView.java 
+
+///AppRole.java    }} 
+
+
+{{ Q.	How many abstract class use for project.? 
+
+BaseBean (implement DropDownlistBean,Serializable,Comparable ) 
+
+BaseCtl(extends HttpServlet class)    }} 
+ 
+{{ Q.	How to call  preload and validate in service method. 
+
+ 	by ovrriding it.  
+
+(preload- on every user request 
+
+validate- when operation is not null, delete, cancel, view , reset.)   }} 
+
+
+{{ Q.     why BaseBean is abstract class in your project? 
+
+ 	Because we do not define two method of DropDownListBean Interface getKey() and getValue(). }} 
+
+ 
+{{ Q.     what is service method? is it compulsary to ovveride it? 
+
+ 	service is called at every user request and it is not advisable to override the service method.    }} 
+
+ 
+{{ Q.     how u r performing encapsulation in your project? 
+
+   encapsulations means gather all related infomation. By Creating Bean classes.  }} 
+
+{{ Q.     how you r using ovveriding concept in your project? 
+
+  All basectl method     }} 
+
+ 
+Q.	***Did you use Dynamic(Runtime) and Static(Fixed) preload And if yes Where? 
+
+Static by using hashmap object on view.				// more should be written on it. 
+
+Dynamic by overriding preload(). 
+
+ 
+
+Q.	Dynamic And Static Methods?  
+
+Overriding(Runtime polymorphism) And OverLoading. 
+
+ 
+
+Q.	Did you override validate method to put Input validations, if so From where you have overriden it? 
+
+OR 
+
+How you used Input validations in our project04?  
+
+BY OVERRIDING VALIDATE() in service() of BaseCtl. 
+
+ 
+
+Q.  	Do we have overidden validate() on our listCtl?  
+
+NO 
+
+ 
+
+Q.	How we achieved refrential integrity (Concept of FK) in our project?  
+
+BY USING NON BS KEY 
+
+ 
+
+Q.	List interface is exist in which package?  
+
+UTIL 
+
+ 
+
+Q.	What is Marker Interface?  
+
+IN WHICH NO METHODS EXIST 
+
+ 
+
+Q.	Serialiizable, cloning, comparable , compareTo?  
+
+SERIALIZABLE IS USED IN BASEBEAN IN WHICH OBJ IS STORED IN PERSISTENCE MEMORY.AND WHICH CAN BE TRRANSFORMED OVER THE NETWORK. 
+
+ 
+
+Q.	What did we Implements in BaseBean?  
+
+Serializable, DropdownListBean,Comparable<BaseBean> 
+
+ 
+
+================================================== 
+
+FRONT CONTROLLER RELATED QUESTIONS:- 
+
+================================================== 
+
+{{ Q.     	What is FrontController? 
+
+ Main Controller performs session checking and logging operations before calling any application controller.  
+
+         It prevents any user to access  application without login. 
+
+  when it is apply ?  
+
+To perform authentication logic and so on.   }} 
+
+ 
+
+Q.     write the code to make frontcontroller? 
+
+ 
+
+ 
+
+ 
+
+Q. 	Filter??? 
+
+Filter perform pre processing and post processsing on a request and response of a client. 
+
+ 
+
+Filter intercepts incoming HttpRequest and perform pre processing operations before delivery request to the target servlet. 
+
+when response is generated, it performs post processing operations before sending response back to client. 
+
+ 
+
+Q.	 Can we use more than a one frontCtl? if so how? 
+
+ Yes, By using FilterChain object.doFilter(request,response) 
+
+ 
+
+{{ Q.	 Definition of FrontCtl Design Pattern? 
+
+ Single Handler for every client request.    }} 
+
+ 
+
+Q.	how we can apply for frontctl?  
+
+By implementing Filter 
+
+ 
+
+Q.	What is the function of chain.doFilter() ? 
+
+It call the another filter if any exist. 
+
+
+=========================== 
+
+EMAIL RELATED QUESTIONS:- 
+
+=========================== 
+
+ 
+
+Q.	how u r sending email? 
+
+By using JAVA MAIL API 1.4.7  
+
+By using some custom class first name EmailMessage, EmailUtility, EmailBuilder. 
+
+ 
+
+{{ Q.	 what are the classes you have used to sending emails? 
+
+We have used six classes for sending email those are  
+
+1.Message  
+
+2.Transport 
+
+3.PasswordAuthenticate 
+
+4.MimeMessage 
+
+5.Session 
+
+6.InternetAddress  }} 
+
+ 
+
+{{ Q.	where you have placed sendMail() in your project? 
+
+EmailUtility    }} 
+
+ 
+
+{{ Q.     how will you do file attachment along with email? 
+
+ 
+
+MimeBodyPart file = new MimeBodyPart(); 
+
+file.attachFile(); 
+
+Multipart mp = new MimeMultipart(); 
+
+mp.addBodyPart(file);    }} 
+
+ 
+
+what if we want to attach 100 files  
+
+ 
+
+ create multipart object 100 times and only one object of mimebodypart. 
+
+
+
+Q.	Why we use Java Mail API 1.4.3 in forget my password ? 
+
+We use Java Mail API 1.4.3 for send mail to user. 
+
+ 
+
+Q.	What are the credentials comes with mail?  
+
+OR   
+
+what are the Events in which mails are send to the clients? 
+
+ 
+
+LoginId,Password,UserFirstName,UserLastName. 
+
+Events:- ForgetMyPassword, ChangePassword,UserRegistration (only loginId, Password), 
+
+ 
+
+========================== 
+
+MVC RELATED QUESTIONS:- 
+
+========================== 
+
+{{  Q.	What is mvc architecture.? 
+
+ 	MVC is a framework technology. It separates code implementation of an application into three component Model,View and Controller.  }} 
+
+ 
+
+Q.     how many layers are present in the mvc architecture? 
+
+ there are Three layers in mvc  
+
+1.presentation layer (view logic) on JSP. 
+
+2.navigation layer (controll logic) on SERVLET. 
+
+3.business layer ( business logic,Data access logic,integration logic) on MODEL. 
+
+ 
+================================================== 
+
+Copy Write : - &copy; 
+
+================================================== 
+
+ 
+================================== 
+
+EXCEPTION RELATED QUESTIONS:- 
+
+=============================== 
+
+ 
+
+Q.	Why we create custom exception ? 
+
+ 	to generate self Exception. 
+
+it can be understand by developer. 
+
+ 
+
+Q.    How Error msg come , also state the flow of ErrorCtl/? 
+
+ 
+
+      It come when the Application Exception Arose. (eg.when the internet access is off) 
+
+      FLOW:- when the Application Exception Arose in EmailUtility class. then servletUtility ki handleException() se Redirect karte h  
+
+      ErrorCtl par, fir waha se ErrorView par. 
+
+ 
+
+{{ Q.       How many exceptions classes you have in your project? 
+
+ ApplicationException,DataBaseException,RecordNotFoundException,DuplicateException.   }} 
+
+ 
+
+Q.     how to create custom exceptions? 
+
+by extends Exception class in our (custom) class 
+
+ 
+
+{{ Q.     how u identify ur exception classes are checked or uncheked? 
+
+Checked exception are mandatory to handle and unchecked are not.           }} 
+
+ 
+
+Q. What is the meaning of line -"throw new Application Exception"? 
+
+  
+Q. Difference between thorw and throws ? 
+
+throw : to raise the exception 
+
+throws: to propogate the exception 
+
+ 
+
+Q.	 how to use try, catch and finally blocks ? 
+
+ 
+
+Q.	 How we can create uncheck Exception? Also Write a flow chart of chech and uncheck Exception? 
+
+ By extending RunTimeException or its child classes. 
+
+ 
+
+Q.	When does 400,402,200,403,500 exception raise? 
+
+ 
+
+400 : bad syntax; server  cannot uderstand requested syntax 
+
+402 : esa koi code nahi hota 
+
+200 : request is successful 
+
+403 : permission issue 
+
+404 : requested resource is not available   
+
+500 : Null Pointer Exception 
+
+ 
+
+Q.	 Where does Application Exception occures in Forget My Password ? 
+
+ EmailUtility ki sendMail() me bcs wha internet ki connectivity nahi milti. 
+
+
+
+=========================== 
+
+Log4j RELATED QUESTIONS:- 
+
+=========================== 
+
+
+{{ Q.	What is log4j.? 
+
+log4j stands for loggin message for java.it is open source framework to log message of your Program to final destination  
+
+        like  database,file,Network,Console.       }} 
+
+Q. how to create log object 
+
+ {{ Q.     how many environment are there in Log4j framework? 
+
+Development (Debug Level) ,Quality Assurance(Info Level) and Production environment(Warn Level).	}} 
+
+ 
+
+{{ Q.     what is rolling file appender in Log4J? 
+
+ 	rolling file appender configured to create new log file every day using our system(laptop,pc) date.  
+
+or  
+
+create a file when given file size is finished.      }} 
+
+ 
+
+{{ Q.     what is appender in Log4j and types of appender? 
+
+Appender is an object that sends log messages to their final destination.  
+
+All the possible appender options are: 
+
+1.Console Appender 
+
+2.RollingFile Appender 
+
+3.DailyRollingFileAppender 
+
+4.ExternalRollingFileAppender 
+
+5.FileAppender 
+
+6.JDBCAppender 
+
+7.NullAppender 
+
+8.SMTPAppender 
+
+9.SocketAppender 
+
+10.TelnetAppender        }} 
+
+ 
+
+{{	log4j has three component  
+
+1.Logger :- 	Responsible for 	capturing logging information. 
+
+2.Appender :-	Responsible for		publishing logging information to various preferred destinations. 
+
+3.layouts:- 	Responsible for 	formatting logging information in different styles.              }} 
+
+ 
+
+log4j.appender.layout.ConversionPattern=%d{dd MM yy HH:mm:ss} %5p %c{1}:%L - %m%n 
+
+1.>	%d{dd MM yy HH:mm:ss}? Used to output the date of the logging event. The date conversion specifier may be followed by a date format 				 
+
+                                specifier enclosed between braces. For example, %d{HH:mm:ss,SSS} or %d{dd MMM yyyy HH:mm:ss,SSS}. 
+
+                                If no date format specifier is given then ISO8601 format is assumed. 
+
+ 
+
+2.>	%p ? Used to output the priority of the logging event. 
+
+3.>	%c{1}? Used to output the category of the logging event. For example, for the category name "a.b.c" the pattern %c{2} will output"b.c". 
+
+4.>	%L? Used to output the line number from where the logging request was issued. 
+
+5.>	%m? Used to output the application supplied message associated with the logging event.  
+
+6.>	%n? Outputs the platform dependent line separator character or characters. 
+
+
+{{ Q.     what is layout in Log4j and types of layouts? 
+
+1.DateLayout 
+
+2.HTMLLayout 
+
+3.PatternLayout 
+
+4.SimpleLayout 
+
+5.XMLLayout       } 
+
+ 
+
+{{ Q.     what is Logger in Log4j and its levels? 
+
+  	.Logger : Responsible for capturing logging information. 
+
+ 
+
+Level of Log4J:																											 
+
+1.Debug Level(Lowest priroty  and DE ) 
+
+2.Info Level(QA) 
+
+3.Warn Level(PE) 
+
+4.Error Level (QA) 
+
+5.Fatal Level (highest Priority)    }} 
+
+ 
+
+{{ Q.     what is the pattern layout in Log4j and its symbolic representation explain? 
+
+ layouts: Responsible for formatting logging information in different styles. OR [ Layout object is used to layout log msgs.] 
+
+  
+
+ log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n    }} 
+
+ 
+
+{{ Q.     how to disable Log4j messages? 
+
+By writing OFF in Log4j.rootLogger... in Log4j.properties.  }} 
+
+ 
+
+Q.     What are the configration of log4j.proprties? 
+
+ 
+
+# Root logger option 
+
+log4j.rootLogger=DEBUG, file, stdout 
+
+  
+
+# Direct log messages to a log file 
+
+log4j.appender.file=org.apache.log4j.RollingFileAppender 
+
+log4j.appender.file.File=${catalina.home}/logs/Project4.log 
+
+log4j.appender.file.MaxFileSize=10MB 
+
+log4j.appender.file.MaxBackupIndex=10 
+
+log4j.appender.file.layout=org.apache.log4j.PatternLayout 
+
+log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n 
+
+  
+
+# Direct log messages to stdout 
+
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender 
+
+log4j.appender.stdout.Target=System.out 
+
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout 
+
+log4j.appender.stdout.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n 
+
+ 
+
+ 
+
+ # what is logger? 
+
+ 
+
+  Class  
+
+ 
+
+ # what is  Appender? 
+
+ 
+
+  Object 
+
+ 
+
+ 
+
+============================ 
+
+JAVADOC RELATED QUESTIONS:- 
+
+============================ 
+
+ 
+
+Q.	What is javadoc.? 
+
+it is java documentation which helps other developer to understand the project. 
+
+ 
+
+Q.	How to create javaDoc? 
+
+first we put message on method and classs by Alt + Shift+J and then select project menu and choose generate javaDoc. 
+
+then congifure javadoc.exe path and select path of destination. 
+
+And apply and run  
+
+ 
+
+JAVADOC OF PRELOAD :- Preload means already define data on jsp. 
+
+JAVADOC OF JDBC    :- IT IS A SINGLETON CLASS WHICH HAVE USED c3p0 LIBERARY. 
+
+ 
+
+Q.	How JavaDoc is opening in other tag?  ...AND...    Where You have used it in your project?  
+
+IN HEADER:-<a href="<%=ORSView.JAVA_DOC_VIEW%>" target="blank">Java Doc</b></a> 
+
+ 
+
+Q.	Why we use PRIVATE to create javadoc?  
+
+BCz WE HAVE TO CREATE IT FOR FULL APPLICATION. 
+
+ 
+
+Q.	How we config DCP?  
+
+
+
+
+Q.	 On what function of your application populate bean is called? 
+
+ on every request of a user. 
+
+Q. 	how did u create javadocs? And which javadocs u prefer? 
+
+By using shortcut key:- Alt+Shift+J 
+
+And we prefer it from predefine classes :- ArrayList,StringBuffer,StringBuilder,List,HashMap....etc 
+
+Q. Type of comments and their differences ? 
+
+1. Single Line : // 
+
+2. Multi Line : /* */ 
+
+3. Java Docs : /** */ : alt + shift + J 
+
+ 
+Q. Why do we cannot use multiline comment for creating javadoc? 
+
+   Because multiline cmnts are avoided by compiler. 
+
+ 
+======================== 
+
+WAR RELATED QUESTIONS:- 
+
+======================== 
+
+ 
+
+{{   Q.  What is the WAR/BUILD ? 
+
+ 	it is compilied code of entire application.    }} 
+
+Q.	What are Maven WAR  
+
+OR  
+
+What is Compiler plugins? 
+
+ 
+Q.	How to create a war? 
+
+ 	   pom.xml me build ki plugin add karte hai  
+
+2. Right click on maven and select the update project and forcefully update project. 
+
+3. run as me clean maven  
+
+4. run as maven install  
+
+5. run as maven build and goal set clean install and select skip test  
+
+6. apply and run 
+
+  create on two place  
+
+1. target folder me  
+
+2. tomcat ke webapps k under hum deploye karte h. (C me .m2 me by default create ho jati h.)  
+
+
+Q.	How  to deploy war. 
+
+
+target folder se copy karo  
+
+then standlone ke deployment folder me paste karo and  
+
+bin me standlone.batch file ko run karo  
+
+deployment folder me build file generate hoti hai. 
+
+
+Q.     Who generates the war file? 
+
+ 	Deployment Lead 
+
+
+{{ Q.	what is release note in build process? 
+
+release note is documentation which contains Applications version, resolved bug, open bug and working functionality. 
+
+ and it is created  by developer leader. after creating war.    }} 
+
+Q.	FullForm of WAR & JAR file & JASON: Also Explain it?   
+
+web archive(WAR) 
+
+java archieve(JAR)  
+
+java simple object notation(JASON) 
+
+
+Q.	 Types of deployements?  
+
+ exploded And WAR 
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+============================== 
+
+DEBUGGING RELATED QUESTIONS:- 
+
+============================== 
+
+49.     what is debugging? 
+
+Ans) Debugging is a process by which developer check the flow of program\operation. 
+
+ 
+
+{{ 50.     how to perform debugging using keys explain? 
+
+  Ans)	ctrl +shift+B = to add and remove break point 
+
+F11= to start debugging 
+
+F5 source code to source code 
+
+F6 Attribute and variable debugging  
+
+F7 Single steping 
+
+F8 Breakpoint to Breakpoint 
+
+ctrl+F8  to switch prospective window  }} 
+
+
+================ 
+
+SHORTCUT KEYS:- 
+
+================ 
+
+ 
+
+//Ctl + Shift + F		format the code 
+
+Ctl + Shift + W		Close all tabs 
+
+Ctl + Shift + L		To see all shortcut keys 
+
+//Ctl + Shift + R		To open the respective class or jsp 
+
+//Ctl + O			To see Attributes and methods of a class or jsp 
+
+//Alt + Shift + J		To create javadoc 
+
+Alt + Shift + pageUp	To shift to the right open class or jsp 
+
+Alt + Shift + pageDn	To shift to the left open claass or jsp 
+
+
+===============================////////////////===========================//////////////=================================////////////////============================== 
+BUILD QUESTIONS------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+
+
+Actor is responsible to perform action. Every application user is a actors.  
+ 
+
+Q)	What is Build Process? 
+
+Ans)	Devloper deploy the code into GIT_UP AC. 
+
+Deploy Lead take the code from that GIT_UP AC and resolve bugs then create WAR to deploy Quality Analyst. 
+
+Then Testor After checking the code quality again deploy the same to the GIT_UP AC.Else he will assign the bugs of the same through FDTS. 
+
+ 
+GitHub is a web-based version-control and collaboration platform for software developers.  
+
+GIT:- It is a version control system used to manage a project or set of files as they change over a periods of time. 
+
+It stores the information in  A data structure called git repository. 
+
+git add		:-  
+
+git init	:-  
+
+git commit	:-  
+
+git push	:- local to remote (checked in) 
+
+git status	:-  
+
+git pull	:- Remote to local (checked out) 
+
+git clone	:-  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+ 
+
+Daily Activity 
+
+1.	Get Latest code from SVN/ GitHub 
+
+2.	Check FDTS for new Task/Bug/Change Request/Ticket. 
+
+3.	Check out required files from SVN to resolve the bug or work on new task. 
+
+4.	Develop code to fix bug or implement new functionality  
+
+5.	Develop Unit testcase if required 
+
+6.	Unit Test functionality.  
+
+7.	Get code review done if required.(ARAXIS tool )  
+
+8.	Compare code and remove any hard coding or debug statement before check-in the code. 
+
+9.	Send status email to Project Lead. 
+
+10.	Fill Time sheet before leaving for the day. 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------	 
+
+ 
+
+Q: What is Release Note ? 
+
+A: Release Note is a MS Word Doc file that is made for every build.   
+
+ 
+
+Release Note contains 
+
+ 
+
+1.	Build Number. (Application version) 
+
+2.	List of new implemented functionality   
+
+3.	List of fixed Bugs 
+
+4.	List of Open Bugs 
+
+5.	List of Known issues  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+{{  Modules  
+
+1.	College Management 
+
+2.	Student Management 
+
+3.	Marksheet Management 
+
+4.	User Management 
+
+5.	Faculty Management 3 
+
+6.	Course Management  
+
+7.	Time Table Management 
+
+8.	Role Module 
+
+9.	Subject Module     }} 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+{{   Technologies 
+
+1.	JDK 1.8 
+
+2.	JSP 2.2(2.3 latest version) / Servlet 3.1.0(4.0) bita version 
+
+3.	JDBC 3.0 (4.2 latest version) 
+
+4.	MySQL 5.1.6 
+
+5.	Java Mail API 1.4.7 
+
+6.	Log4j 1.2.14         }} 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+Tools 
+
+1.	Eclipse Mars 1 
+
+2.	SQLYog 9.0 
+
+3.	ArgoUML  
+
+4.	ER Win 
+
+================================================== 
+
+{{  Builder Pattern :- Builder Pattern builds complex objects using simple object using step by step approach.   }} 
+
+================================================== 
+
+Abstract Factory :- it is pattern work around a super factory which create other factories. 
+
+================================================== 
+
+{{  Use Case :- one complete functionality is called UseCase.   }} 
+
+================================================== 
+
+{{  Modules :- set of related use case is called Modules.      }} 
+
+================================================== 
+
+{{  who create the release note?  
+
+Ans) Deloyepment leader.   }} 
+
+================================================== 
+
+we do not change db as we use native SQL. 
+
+================================================== 
+
+ 
+{{  01) what is ORS ? 
+
+   Ans)	ORS is a online Web Application that manage the student and marksheet records.  }} 
+
+02) dependencies in pom.xml? 
+
+Ans)	 c3p0 0.9.5 
+
+ Log4J 1.2.17 
+
+ javax.Mail 1.4.7 
+
+ javax.Servlet 3.1.0 
+
+ MySql.connector 5.1.6 
+
+03) Types of validation in the project? 
+
+Ans) 	There are two types of validations in our Projects.  
+
+Validations 
+
+1.ServerSideValidations ( we use this bcz client can not skip this) 
+
+1.1.InputValidations 
+
+1.Declarative (annotation) 
+
+2.Programatic Validations (custom) 
+
+1.2.Business Validations(Check from Database) () 
+
+2.ClientSide Validations 
+
+Use JavaScript	or any other scripting laanguage. 
+
+(we didn't used it in our proj4 bcz client may skip validation, which is not secure.)	 
+
+{{  04) how you can apply the client side validation? 
+
+    Ans) JavaScript (Or any scripting language)         }} 
+
+
+{{ 05) write the modules components you have worked on in the projet? 
+
+
+1.UserBean.java 
+
+2.UserModel.java 
+
+3.UserView.jsp 
+
+4.UserCtl.java 
+
+5.UserListCtl.java 
+
+6.UserListView.jsp 
+
+7.MyProfileCtl.java 
+
+8.MyProfileView.jsp 
+
+9.ChangePasswordCtl.java 
+
+10.ChangePasswordView.jsp 
+
+11.ForgotPasswordCtl.java 
+
+12.ForgotPasswordView.jsp 
+
+13.UserRegistrationCtl.java 
+
+14.UserRegistrationView.jsp           }} 
+
+ 
+{{   Q.     write the code for search method? 
+
+select * from st_user where 1=1 AND NAME Like"bean.getFirstName()"+"%" 
+
+sql.append(order by id desc) 
+
+sql.append("limit"+pageNo+","+pageSize);       }} 
+
+06) what is pom.xml? 
+
+Ans) It is a Xml file that contains confriguration details used by maven to build the project. 
+
+07) what is web.xml? 
+
+Ans) it is Xml file that contains application confrigurations and it is also called Deployment Descriptor. 
+
+08) error message flow? 
+
+09) success messages flow? 
+
+10) how you are performing bussiness validation? 
+
+firstly we have propagated exception on model and we have catched on ctl and get on view. 
+
+{{  11) what is bussiness validation? 
+
+ Checks the business conditions that may need database communication.   }} 
+
+ 
+
+12) which tag u have use to displaying image on page? 
+
+ <img src= "/img/CustomLogo.png"> 
+
+ 
+
+{{  13) write the component of any model methods? 
+
+ 
+
+public long add(StudentBean bean)        }} 
+
+ 
+
+{{  14) what are the utility classes you have in your project? 
+
+Nine utility classes we have used in our project. 
+
+1. DataUtililty.java :- 
+
+ Data Utility class is used to format data from one format to another. 
+
+2. DataValidator.java :-  
+
+ DataValidator class is used to validate input data. 
+
+3. HtmlUtility.java :-  
+
+HtmlUtility class is used to produce html content like DropDownList etc. 
+
+4. ServletUtility.java : 
+
+This class provides utility operation for Servlet container like forward, redirect, handle generic exception, 
+
+            manage success and error message, manage default Bean and List, manage pagination parameters. 
+
+5. EmailMessage.java:-  
+
+EmailMessage contains email message. 
+
+6. EmailUtility.java :-  
+
+Email Utility provides Email Services 
+
+1.sentMail(); 
+
+7. EmailBuilder.java :-  
+
+EmailBuilder Class that build Application Email messages 
+
+Three method  
+
+1.getUserRegistrationMessage(); 
+
+2.getForgotPasswordMessage(); 
+
+3.getChangePasswordMessage(); 
+
+8. JDBCDataSource.java :-  
+
+it is a DATA CONNECTION POOL. 
+
+9. PropertyReader.java :-  
+
+Read the property values from application properties file using Resource Bundle     }} 
+
+ 
+
+15.	What is all utility classes.? 
+
+Ans) 	Utility classes is used to reusability and reuseable services. 
+
+ 
+
+{{   16) Write the method siganature of all method of one module ? 
+
+  Ans) 	public Integer nextPK(){} 
+
+public long add(FacultyBean bean){} 
+
+public FacultyBean findByPk(long pk){} 
+
+public FacultyBean findByEmail(String email){} 
+
+public void Delete(FacultyBean bean){} 
+
+public void Update(FacultyBean bean){} 
+
+public List search(FacultyBean bean){} 
+
+public List search(FacultyBena bean,int pageNo,int pageSize){} 
+
+public List list(){} 
+
+public List list(int pageNo,int pageSize){}                   }} 
+
+ 
+
+17.	What is input validation and buissness validation? 
+
+Ans) 	Input validations checks inputs data entered by user. 
+
+ Checks the business conditions that may need database communication. 
+
+ 
+{{  18.	What  is javadoc.? 
+
+  Ans)	Javadoc is a documentation which helps other developer to understand the project.   }} 
+
+ 
+{{  19.	What is customize exception? 
+
+ Ans) 	Custom exception is created by developer .we have created own exception classs by extends Exception class. We have created four customize exception like 
+
+       ApplicationException,RecordNotFoundException,DuplicatedException,DataBaseException.    }} 
+
+ 
+
+{{  20.	Difference between checked exception and unchecked exception.? 
+
+ Ans) 	Uncheked exceptions are optional to handle. RuntimeException and Error classes and their subclasses are uncheked exceptions. 
+
+Checked exceptions are mandatory to handle.  
+
+The keyword throws is mandatory to propagate checked exceptions and optional for unchecked exceptions.  }} 
+
+ 
+
+{{  21.	Difference between comparable and comparator.? 
+
+ Ans)	Comparable has default nature of sorting order. it has a compareTo() method. 
+
+2. javax.lang 
+
+Compartor is customized and it has compare(). 
+
+2.javax.util   }} 
+
+ 
+
+ {{ 22.	Difference between string buffer and string builder.? 
+
+ Ans) 	StringBuffer is synchronized and thread safe and used in multi user system. 
+
+StringBuilder is Asychronized and not thread safe and used in single user system.  }} 
+
+ 
+
+ {{ 23.	Difference between url,uri.? 
+
+ Ans) 	URL has a particular resource in request where as URI check only resource is exist or not. 
+
+URL brings particular resource where as URI return true and false.         }} 
+
+ 
+
+{{ 24.	What is maven.? 
+
+ Ans)	Maven is a powerful build automation tools.}} 
+
+ 
+
+25.     What if there is not an entry of welcome file in web.xml Then how you will run your Application? 
+
+ Ans)   The index.jsp file is existed in webapp folder so application can run. 
+
+ 
+
+26.	Why welcome.jsp run first : and in which tag?  
+
+Ans.	XML Mapping me humne <welcome file list> k <welcome file> me Index.jsp mention kar k rakha h  
+
+ 
+
+27.	How Hi Guest is coming on header? 
+
+Ans.	Hard coded on jsp 
+
+
+28.	What is the alternate way to access Application ?  
+
+Ans.	forget my password  
+
+ 
+
+29.	What is System.properties?  
+
+Ans.	It is a properties file that uses resource bundel to remove hard coding. 
+
+
+30.	Header code Hi akash Is in which scope?  
+
+Ans.	SESSION 
+
+ 
+
+31.	When does Query string is shown on url?  ...And... what does this query string means?  
+
+Ans. 	?id=42	 It is shown on clicking EDIT link 
+
+ 
+
+32.	Difference b/w RequestDispatcher and send rediect? 
+
+Ans.	 
+
+
+33. Do we have doPost() on welcomeCtl? NO 
+
+ 
+
+34.	Do custom validate() runs in UserRegistration? 
+
+Ans.	YES ON EVERY SUBMIT  
+
+ 
+
+35.	How you used --select-- in DropdownList?  
+
+Ans.	USING HASHMAP 
+
+ 
+
+36.	When does the validate() calls?   
+
+Ans.	In service() WHEN 5 OP(reset,cancel,not_null,View,Delete) ARE NOT CALLED 
+ 
+
+37.	What if we have to change TimeTableListView from extra fields? 
+
+Ans.	We have to do changes at three places :- Model ki search me , TimeTableCtl me ..... , View me ??????????????????????????  
+
+
+38.	Do UserRegistration is included in user Module? 
+
+Ans.	NO 
+
+ 
+
+39.	What are the arguments of ChangePassword?  
+
+Ans.	login id , old , new password 
+
+ 
+
+40.	href is used in which tag?  
+
+Ans.	ANCHOR <a> 
+
+ 
+
+41.	IF User Registration is done then what will be the role Id?????? 
+
+Ans.     Student 
+
+ 
+
+42.	How you set a value in your project? 
+
+Ans.	USING REQUEST SCOPE 
+
+ 
+
+43.	Explain populateBean AND populateDTO : And where they exist in our project?  
+
+Ans.	DTO PRESENT IN BASECTL & HOLD GENERIC ATTRIBUTE 
+
+ 
+
+44.	When does ApplicationException come? 
+
+Ans.	 
+
+ 
+
+45.	How CALENDER is displaying on the screen : and its dependencies used in project? 
+
+Ans.	By Datepicker function of JavaScrripts. 
+
+ 
+
+Jquery.ui.js 
+
+Jquery.ui.css 
+
+Jquery.ui.1.12.4.js 
+
+ 
+
+46.	How to create objects of RB,RD,Session? 
+
+Ans.	 
+
+
+
+47.	Explain the properties of Log4j? 
+
+Ans. 
+
+ 
+48.	What are the types of Diagrams used in access . Explain them? 
+
+Ans. 	1. UML:- Sequence, Class, UseCase, Deployement, Screenflow, Package 
+
+2. ER Diagram :- DataFlow Diagram. 
+
+
+49. Write the codes of Exception and Utility classes? 
+
+Ans.  
+
+
+50.   How we start a project using war in both the server? 
+
+Ans.  Jboss. Start a server from bin >> standalone... && then copy url of project on the browser. 
+
+Tomcat.  
+
+
+51. Difference between ServletUtility ki setBean and populateBean()? 
+
+Ans. setBean : set default bean to request. 
+
+populateBean() : populate bean  populate data (set objects) from request parameter. 
+
+ 
+
+52. Where did u set date format on UserListCtl.java? 
+
+Ans. DataUtility ki Method which convert date to String 
+
+ 
+
+public static Date getDate(String val) { 
+
+Date date = null; 
+
+try { 
+
+date = formatter.parse(val);			//INCOMPLETE ANSWER 
+
+} catch (Exception e) { 
+
+ 
+
+} 
+
+return date; 
+
+} 
+
+ 
+
+53)  Copy URL >> LOGOUT >> PASTE >> LOGIN >> Same page should get open....& 
+
+ 
+
+54. Why we use eclipse? Else what we can use for application devlopment? 
+
+Ans.Because eclipse support different languages with the help of jar file..... NetBeans ,  
+
+ 
+
+55. Why we did not use String Builder instead of String Buffer? 
+
+Ans. ?????  
+
+ 
+
+56. Why we did not use LinkList instead of using ArrayList? 
+
+Ans. ????? 
+
+
+
+57. What is socket-binding.... What is port no. and IP address? 
+
+ 
+
+58. How did u set & get input and b/s validations in your application? 
+
+Ans. INPUT VALIDATION:- 
+
+     BUSSINESS VALIDATION:- 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+@author 
+
+@version 
+
+@copyright 
+
+@return 
+
+@throws 
+
+@param 
+
+@WebServlet  
+
+@WebFilter 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+ 
+
+ 

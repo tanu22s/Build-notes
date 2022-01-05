@@ -1,0 +1,955 @@
+ 
+
+BUILD QUESTIONS-------------------------------------------------- 
+
+ 
+
+01) what is ORS ? .......it is a web application. It provides marksheet and user managment online. 
+
+ 
+
+02) dependencies in pom.xml?.............. 
+
+1. c3p0 0.9.1.2 
+
+2. log4j 1.2.14 
+
+3. mail 1.4.7 
+
+4.Servlet api 3.0 
+
+5.Junit 4.11 
+
+6.mySQL connector 5.0.8 
+
+7. 
+
+ 
+
+server side validations  
+
+input Business 
+
+inupt 
+
+programatic  
+
+decleartive 
+
+ 
+
+03) types of validation in the project? 
+
+Ans... 1.input validation 
+
+            2.business validation 
+
+ 
+
+04) how you can apply the client side validation? 
+
+Ans...1.jQuery 
+
+           2.JavaScript 
+
+ 
+
+05) write the modules you have worked on in the projet? 
+
+ 
+
+06) what is pom.xml? 
+
+Ans... it contains project information and configuration. 
+
+ 
+
+07) what is web.xml? 
+
+Ans...This is a key file for running a Tomcat application and defines various features of the application.  
+
+        It is the deployment descriptor. It contains mapping for Servlets welcome pages,session timeout setting. 
+
+ 
+
+08) error message flow? 
+
+ 
+
+09) success messages flow? 
+
+ 
+
+10) how you are performing bussiness validation? 
+
+ 
+
+11) what is bussiness validation? 
+
+Ans... jo database se check hoker aate h. 
+
+ 
+
+12) which tag u have to displying image on page? 
+
+Ans...<IMG SRC="path of the image folder"> 
+
+ 
+
+13) write the signature of any model methods? 
+
+ 
+
+14) what are the utility classes you have in your project? 
+
+Ans..1.data validator 
+
+2.datautility 
+
+3.emailmessage 
+
+4.emailutility 
+
+5.emailbuilder 
+
+6.HTMLutility 
+
+7.JDBCDataSource 
+
+8.propertyreader 
+
+9.servletutility 
+
+ 
+
+15) what is the purpose to use utiity classes? 
+
+Ans..code reusability 
+
+16) how u r sending email? 
+
+Ans..by using java mail api 
+
+ 
+
+17) what are the classes you have used to sending emails?api 
+
+Ans.1.Mail.message 
+
+2.mail.session 
+
+3.mail.transport 
+
+4.mail.internet.internetAddress 
+
+5.mail.internet.mimemessage 
+
+6.mail.passwordAuthentication 
+
+ 
+
+18) where you have placed sendMail() in your project? 
+
+Ans.. In emailutility class. 
+
+ 
+
+-------------------------------------------------------------------------------------------------------------- 
+
+1.      What is FrontController? 
+
+Ans..Frontcontroller is the main controller of all controller.  
+
+2. What is input validation and bussness validation? 
+
+Ans.1. Input validations checks on CTL 
+
+2.business validations checks from database 
+
+ 
+
+3. Why override service method? 
+
+Ans.. we want to perform any operation in every request like preload end validate. 
+
+ 
+
+4.	What is mvc architecture.? 
+
+Ans..1.model 
+
+2.view 
+
+3.controller 
+
+ 
+
+5.	What  is javadoc.? 
+
+Ans...   It is a tool which comes with jdk and it is used for generating java code documentation in HTML formate  
+
+from java source code. Which requires documentation  in a predefined formate. 
+
+ 
+
+6.	What is customize exception? 
+
+Ans..If you are creating your own Exception   that is known as custom exception  
+
+ 
+
+7.	What is tomcat directory sturucture.? 
+
+Ans..  
+
+1. Bin 
+
+2. Lib 
+
+3. Conf 
+
+4. Webapp 
+
+5. Temp 
+
+6. Work 
+
+7. Log 
+
+ 
+
+8.	What is jboss directory sturucture.? 
+
+Ans.. 
+
+ 
+
+9. What is all tag of jsp 
+
+Ans..1. Scripting element 
+
+       A. Scriptlet tag 
+
+       B. Expression tag 
+
+       C. Declaration tag 
+
+2. Directive elementteg 
+
+       A. Page directive 
+
+       B. Include directive 
+
+       C. Taglib directive 
+
+ 
+
+3. Action element  
+
+        A. Jsp:include 
+
+        B. Jsp:forward 
+
+        C. Jsp:usebean 
+
+        D. Jsp:setproperty 
+
+        E. Jsp:getproperty 
+
+        F. Jsp:plugin 
+
+ 
+
+ 
+
+10. How many types of session tracikng.? 
+
+Ans...Session simply means a particular interval of time. 
+
+             Session Tracking is a way to maintain state of an user.Http protocol is a stateless protocol. 
+
+       Each time user requests to the server, server treats the request as the new request. 
+
+       So we need to maintain the state of an user to recognize to particular user. 
+
+1. Cookies 
+
+2. HttpSession 
+
+3. HiddenFormField 
+
+4. URL rewriting 
+
+ 
+
+11.	How many types of create servlet.? 
+
+Ans..3 types of creating Servlet 
+
+     1. Implementing Servlet interface 
+
+     2. Extends genericServlet class 
+
+     3. Extends httpServlet class 
+
+ 
+
+12.	What is servlet lifecycle.? 
+
+Ans..1. Load Servlet class,creates Servlet instanc, calls init() method. 
+
+2. Container invokes service() method and pass client request and response objects to this method. 
+
+3. If container needs to remove Servlet then calls destroy() method. 
+
+ 
+
+13.	Difference between jboss and tomcat,? 
+
+Ans.. 1. JBoss is a application server and tomcat is a web server. 
+
+2. 
+
+ 
+
+14. Difference between web server and application server.? 
+
+Ans..1.In terms of logical difference between web server and application server. web server is supposed to provide http protocol  
+
+       level service while application server provides support to web service and expose business level service e.g. EJB.  
+
+ 
+
+2.Though its not limited to Application Server but they used to provide services like Connection pooling, Transaction management, messaging, clustering, load balancing and persistence. Now Apache tomcat also provides connection pooling.  
+
+ 
+
+3.Application Server supports distributed transaction and EJB. While Web Server only supports Servlets and JSP.  
+
+ 
+
+4.Application server are more heavy than web server in terms of resource utilization.  
+
+ 
+
+15.	Defference between checked exception and unchecked exception.? 
+
+Ans.. 
+
+\ 
+
+ 
+
+16. Defference between comparable and comparator.? 
+
+Ans..Comparable	               Comparator 
+
+1) Comparable provides single sorting sequence. In other words, we can sort the collection on the basis of single element  
+
+   such as id or name or price etc.	                     
+
+   Comparator provides multiple sorting sequence. In other words, we can sort the collection on the basis of multiple elements  
+
+   such as id, name and price etc. 
+
+ 
+
+2) Comparable affects the original class i.e. actual class is modified.	 
+
+            Comparator doesn't affect the original class i.e. actual class is not modified. 
+
+ 
+
+3) Comparable provides compareTo() method to sort elements.	                 
+
+                   Comparator provides compare() method to sort elements. 
+
+ 
+
+4) Comparable is found in java.lang package.	 
+
+      Comparator is found in java.util package. 
+
+ 
+
+5) We can sort the list elements of Comparable type by Collections.sort(List) method. 
+
+           We can sort the list elements of Comparator type by collections.sort(List,Comparator) method 
+
+ 
+
+17.	Defference between generic servelt and http servlet.? 
+
+Ans..GENERICSERVLET	     HTTPSERVLET 
+
+1.) Can be used with any protocol (means, can handle any protocol). Protocol independent.-- 
+
+Should be used with HTTP protocol only (can handle HTTP specific protocols) . Protocol dependent. 
+
+ 
+
+2.) All methods are concrete except service() method. service() method is abstract method.	 
+
+All methods are concrete (non-abstract). service() is non-abstract method. 
+
+ 
+
+3.) service() should be overridden being abstract in super interface. 
+
+service() method need not be overridden. 
+
+ 
+
+4.) It is a must to use service() method as it is a callback method. 
+
+Being service() is non-abstract, it can be replaced by doGet() or doPost() methods. 
+
+ 
+
+5.) Extends Object and implements interfaces Servlet, ServletConfig and Serializable.	 
+
+Extends GenericServlet and implements interface Serializable 
+
+ 
+
+6.) Direct subclass of Servet interface.	 
+
+Direct subclass of GenericServlet. 
+
+ 
+
+7.) Defined javax.servlet package.	Defined javax.servlet.http package. 
+
+ 
+
+8.) All the classes and interfaces belonging to javax.servlet package are protocol independent.	 
+
+All the classes and interfaces present in javax.servlet.http package are protocol dependent (specific to HTTP). 
+
+ 
+
+18.	Defference between forword and send redirect.? 
+
+Ans..    forward is used to forward request from one page to another with in the same applicaltion  
+
+ 
+
+where as sendRedirect is used to forward request between multiple applications or servers  
+
+ 
+
+same request is forwarded to another page where as new request is generated to forward via reDirect() 
+
+ 
+
+called over the object of RequestDispatcher Where as reDirect is called over the object of session. 
+
+ 
+
+redirect is slow as compared to forward() as it needs to genetate a new request to forward. 
+
+ 
+
+19.	Defference between string buffer and string builder.? 
+
+Ans...stringBuffer.                stringBuilder 
+
+1.)Synchronized.                ASynchronized 
+
+2.)Thread safe.                   Not thread safe 
+
+3.)used in muilti User system.      Used in single user system. 
+
+ 
+
+20.	Defference between static polymorphism and dynamic polymorphism.? 
+
+Ans.. 
+
+         static  poly.          -            dynamic poly. 
+
+1.       done by OverLoading                done by Overriding 
+
+ 
+
+21.	Defference between url,urn.? 
+
+Ans.. 
+
+ 
+
+22.	 What is base bean .? 
+
+Ans.. BaseBean is the parent of all bean classes in our project. It contains generic attributes. 
+
+ 
+
+23.	What is basectl. And its all methods.? 
+
+Ans.. it is base controller of the project. It contains generic operations, generic constant, generic work flow. 
+
+ 
+
+24.	What is maven.? 
+
+Ans..    Maven is a project management tool. It is based on POM (Project Object Model). 
+
+         Maven is  a Powerful Build Automation tool. 
+
+ 
+
+25.	What is pom.xml.? 
+
+Ans.. It contains project information and configuration details. 
+
+ 
+
+ 
+
+26.	What is log4j.? 
+
+Ans.. Log4j is stands for logging message. Logging means record your program message at console,file,network or database. 
+
+ 
+
+27.	What is mvc architecture.? 
+
+Ans.. MVC is a framework methodology that separates an application's code implementation into three components model, view, and controller.  Each component contains different application logics.  
+
+ 
+
+ 
+
+28.	What is design pattern.? 
+
+Ans..    Design patterns are the industry based coding practices. Design patterns are followed order to provide standard solution  
+
+         for standard problems while developing application. 
+
+ 
+
+29.	What is javadoc.? 
+
+Ans..  It is a tool which comes with jdk and it is used for generating java code documentation in HTML formate from java source code. 
+
+       Which requires documentation  in a predefined formate. 
+
+ 
+
+30.	What is normalization.? 
+
+Ans..    To reduce Repetation. 
+
+ 
+
+31.	What is all utility classes.? 
+
+Ans..1.data validator 
+
+2.datautility 
+
+3.emailmessage 
+
+4.emailutility 
+
+5.emailbuilder 
+
+6.HTMLutility 
+
+7.JDBCDataSource 
+
+8.propertyreader 
+
+9.servletutility 
+
+ 
+
+32.	How many  types use for scope.? 
+
+Ans..There are 4 values: 
+
+1.page 
+
+2.request 
+
+3.session 
+
+4.application 
+
+ 
+
+33.	How many types interface use for project.? 
+
+Ans.. 2 type 
+
+1.ORSView 
+
+2.DropDownList 
+
+ 
+
+34.	How many abstract class use for project.? 
+
+Ans.. 1. BaseBean 
+
+2. BaseCtl 
+
+ 
+
+35.	How many types session destroy.? 
+
+Ans.. by using session.invalidate() 
+
+ 
+
+36.	When run for service method.? 
+
+Ans.. 
+
+ 
+
+37.	What is acid properties. 
+
+Ans..    A- Atomicity-----=--->It means nothing or all.All the database change made by a transition will be committed or aboted .  
+
+         A transection can also be rolled back  in case of: 
+
+         1. Deadlocks  
+
+         2.database or application software failures   
+
+         3.CPU or Disk Failures.  
+
+ 
+
+         C- Consistency--=--->It makes sure that database will be in consistent state. A Transaction must always leave the system 
+
+             in a cosistent state, no matter how many cuncurrent transaction are running at time. 
+
+ 
+
+         I - Isolation----=--->An application may execute multiple business aperations at a time that will run concurrent  
+
+              transections. Isolation brings benifit of hiding uncommitted changes(also known as Dirty Data ) of a transaction 
+
+              from other concurrent transactions. 
+
+ 
+
+         D- Durability----=--->It says a successful transaction must permanemtly change the state of a system and before ending it, 
+
+             the state changes are recorded in a persisted transaction log.if our system is suddenly affected by a system crash or a 
+
+             power outage, then all unfinished committed transactions may be replayed. 
+
+ 
+
+38.	How to call in service method preload and validate. 
+
+Ans..preload() - Loads list and other data required to display at HTML form. 
+
+Validate()- Validates input data entered by User. 
+
+ 
+
+39.     What is the build Process? 
+
+Ans.. 
+
+ 
+
+40.     Who generates the war file? 
+
+Ans.. 
+
+ 
+
+41.     how many environment are there in Log4j framework? 
+
+Ans.. 4 environment are there in log4j 
+
+1. Devlopment 
+
+2. Testing 
+
+3. Staging 
+
+4. Production 
+
+ 
+
+42.     why BaseBean is abstract class in your project? 
+
+Ans.. because it has implimented dropdownListBean interface, which has 2 abstract methods getKey() and getValue(). 
+
+ 
+
+43.     how many layers are present in the mvc architecture? 
+
+Ans. 3 leyers in MVC architecture 
+
+1. Model  
+
+2. View 
+
+3. Controller 
+
+ 
+
+44.     what are the implicit objects in jsp? 
+
+Ans..Object	        Type 
+
+1) out	              JspWriter 
+
+2) request	      HttpServletRequest 
+
+3) response	      HttpServletResponse 
+
+4) config	              ServletConfig 
+
+5) session	      HttpSession 
+
+6) application      ServletContext 
+
+7) pageContext.  PageContext 
+
+8) page	              Object 
+
+9) exception	      Throwable 
+
+ 
+
+45.     how will you do file attachment along with email? 
+
+Ans.. 
+
+ 
+
+46.     how many design patterns you have used in your application explain? 
+
+Ans..1.  Bridge pattern 
+
+2. Singleton 
+
+3. Factory 
+
+4. Frontcontroller 
+
+47.     write the code for search method? 
+
+Ans.. 
+
+ 
+
+48.   write the code to make frontcontroller? 
+
+Ans.. 
+
+ 
+
+49.     what is debugging? 
+
+Ans..   In software development, debugging involves locating and correcting code errors in a computer program.  
+
+        Debugging is part of the software testing process. 
+
+ 
+
+50.     how to perform debugging using keys explain? 
+
+Ans.. 
+
+ 
+
+51.     how many interfaces you have used in your project? 
+
+Ans.. 1. ORSView 
+
+2. Dropdown 
+
+ 
+
+52.     what is service method? is it compulsary to ovveride it? 
+
+Ans.. 
+
+ 
+
+53.     what is the jsp page life cycle? 
+
+Ans..1. JspInit() 
+
+2. _jspService() 
+
+3. JspDistroy() 
+
+ 
+
+54.     what is rolling file appender in Log4J? 
+
+Ans.. 
+
+ 
+
+55.     what is appender in Log4j and types of appender? 
+
+Ans.. 
+
+ 
+
+56.     what is layout in Log4j and types of layouts? 
+
+Ans.. 
+
+ 
+
+57.     what is Logger in Log4j and its levels? 
+
+Ans.. 
+
+ 
+
+58.     what is the pattern layout in Log4j and its symbolic representation explain? 
+
+Ans.. 
+
+ 
+
+59.     How many exceptions classes you have in your project? 
+
+Ans.. 4 classes are in our project 
+
+1. DatabaseException 
+
+2. RecordNotFoundException 
+
+3. DuplicatRecordException 
+
+4. ApplicationException 
+
+ 
+
+60.    how to create custom exceptions? 
+
+Ans.. by extending exception class 
+
+ 
+
+61.  how many ways to invalidate session(); 
+
+Ans.. by using session.invalidate(); 
+
+ 
+
+62.     how to enable session? 
+
+Ans.. httpSession session= request.getSession(true); 
+
+ 
+
+63.     difference between session(true) and session(false); 
+
+Ans..    request.getSession(true) will return always new session. 
+
+         request.getSession(false) will return current session. If current session does not exists, then it will create a new session. 
+
+ 
+
+64.     how to format the code? 
+
+Ans..  Ctrl+shift+f 
+
+ 
+
+65.     what is release note in build process? 
+
+Ans.. 
+
+ 
+
+66.     how to disable Log4j messages? 
+
+Ans..   In Log4j.properties Log4j.rootLogger=OFF. 
+
+ 
+
+67.     what if there is not an entry of welcome file in web.xml explain? 
+
+Ans..   By default index.jsp will call. 
+
+ 
+
+68.     how to set timeout for session in web.xml? 
+
+Ans..   <session-cofig> 
+
+          <sesstion-timeout>20</sesstion-timeout> 
+
+       </session-cofig> 
+
+ 
+
+69.     what is the default timeout for session? 
+
+Ans.. 20 minutes. 
+
+ 
+
+70.     difference between session and cookies? 
+
+Ans..   The main difference between a session and a cookie is that session data is stored on the server,  
+
+         whereas cookies store data in the visitor's browser. 
+
+ 
+
+71.     how to identify user on server? 
+
+Ans..session 
+
+ 
+
+72.     difference between application server and web server? 
+
+Ans.. 
+
+ 
+
+73.     list out the name of web server and application server? 
+
+Ans..web server- 1. Tomcat 
+
+                              2. Jatty 
+
+ 
+
+Application server-1.  Jboss 
+
+                                 2.  Glassfish 
+
+ 
+
+ 
+
+74.     how u r performing encapsulation in your project? 
+
+Ans.. by creating bean classes. Bean classes are the expert classes. Expert class contain releted attributes and methods. 
+
+ 
+
+75.     how you r using ovveriding concept in your project? 
+
+Ans.. 
+
+ 
+
+76.     how u are identify ur exception classes are checked aur uncheked? 
+
+Ans.. 
+
+ 
+
+ 
+
+---------------------------------------------------------------------------- 
